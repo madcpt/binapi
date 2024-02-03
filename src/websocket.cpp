@@ -113,7 +113,7 @@ private:
         if( !SSL_set_tlsext_host_name(m_ws.next_layer().native_handle() ,m_host.c_str())) {
             auto error_code = boost::beast::error_code(
                  static_cast<int>(::ERR_get_error())
-                ,boost::asio::error::get_ssl_category()
+                ,boost::asio::error::get_misc_category()
             );
 
             __BINAPI_CB_ON_ERROR(cb, error_code);
